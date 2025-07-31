@@ -1,0 +1,206 @@
+{
+  "tradingAccountId": 1,
+  "contractSymbol": "MES_SEP25",
+  "contractName": "SEP 25 CME MICRO S&P",
+  "exchange": "CME",
+  "trades": [
+    {
+      "date": "07/02/2025",
+      "buy": 0,
+      "sell": 4,
+      "price": 6240.25,
+      "currency": "USD",
+      "exchangeFees": 1.40,
+      "nfaFees": 0.08,
+      "commission": 2.00,
+      "conversionRate": 1.0
+    },
+    {
+      "date": "07/02/2025",
+      "buy": 0,
+      "sell": 1,
+      "price": 6265.75,
+      "currency": "USD",
+      "exchangeFees": 0.35,
+      "nfaFees": 0.02,
+      "commission": 0.50,
+      "conversionRate": 1.0
+    },
+    {
+      "date": "07/02/2025",
+      "buy": 0,
+      "sell": 2,
+      "price": 6265.50,
+      "currency": "USD",
+      "exchangeFees": 0.70,
+      "nfaFees": 0.04,
+      "commission": 1.00,
+      "conversionRate": 1.0
+    },
+    {
+      "date": "07/02/2025",
+      "buy": 2,
+      "sell": 0,
+      "price": 6253.25,
+      "currency": "USD",
+      "exchangeFees": 0.70,
+      "nfaFees": 0.04,
+      "commission": 1.00,
+      "conversionRate": 1.0
+    },
+    {
+      "date": "07/02/2025",
+      "buy": 4,
+      "sell": 0,
+      "price": 6242.75,
+      "currency": "USD",
+      "exchangeFees": 1.40,
+      "nfaFees": 0.08,
+      "commission": 2.00,
+      "conversionRate": 1.0
+    },
+    {
+      "date": "07/02/2025",
+      "buy": 1,
+      "sell": 0,
+      "price": 6266.25,
+      "currency": "USD",
+      "exchangeFees": 0.35,
+      "nfaFees": 0.02,
+      "commission": 0.50,
+      "conversionRate": 1.0
+    },
+    {
+      "date": "07/07/2025",
+      "buy": 2,
+      "sell": 0,
+      "price": 6304.25,
+      "currency": "USD",
+      "exchangeFees": 0.70,
+      "nfaFees": 0.04,
+      "commission": 1.00,
+      "conversionRate": 1.0
+    },
+    {
+      "date": "07/07/2025",
+      "buy": 2,
+      "sell": 0,
+      "price": 6301.00,
+      "currency": "USD",
+      "exchangeFees": 0.70,
+      "nfaFees": 0.04,
+      "commission": 1.00,
+      "conversionRate": 1.0
+    },
+    {
+      "date": "07/07/2025",
+      "buy": 0,
+      "sell": 2,
+      "price": 6300.75,
+      "currency": "USD",
+      "exchangeFees": 0.70,
+      "nfaFees": 0.04,
+      "commission": 1.00,
+      "conversionRate": 1.0
+    },
+    {
+      "date": "07/07/2025",
+      "buy": 0,
+      "sell": 2,
+      "price": 6299.50,
+      "currency": "USD",
+      "exchangeFees": 0.70,
+      "nfaFees": 0.04,
+      "commission": 1.00,
+      "conversionRate": 1.0
+    },
+    {
+      "date": "07/16/2025",
+      "buy": 4,
+      "sell": 0,
+      "price": 6280.75,
+      "currency": "USD",
+      "exchangeFees": 1.40,
+      "nfaFees": 0.08,
+      "commission": 2.00,
+      "conversionRate": 1.0
+    },
+    {
+      "date": "07/16/2025",
+      "buy": 0,
+      "sell": 4,
+      "price": 6279.00,
+      "currency": "USD",
+      "exchangeFees": 1.40,
+      "nfaFees": 0.08,
+      "commission": 2.00,
+      "conversionRate": 1.0
+    },
+    {
+      "date": "07/16/2025",
+      "buy": 2,
+      "sell": 0,
+      "price": 6277.75,
+      "currency": "USD",
+      "exchangeFees": 0.70,
+      "nfaFees": 0.04,
+      "commission": 1.00,
+      "conversionRate": 1.0
+    },
+    {
+      "date": "07/16/2025",
+      "buy": 0,
+      "sell": 2,
+      "price": 6276.75,
+      "currency": "USD",
+      "exchangeFees": 0.70,
+      "nfaFees": 0.04,
+      "commission": 1.00,
+      "conversionRate": 1.0
+    },
+    {
+      "date": "07/28/2025",
+      "buy": 2,
+      "sell": 0,
+      "price": 6428.75,
+      "currency": "USD",
+      "exchangeFees": 0.70,
+      "nfaFees": 0.04,
+      "commission": 1.00,
+      "conversionRate": 1.0
+    },
+    {
+      "date": "07/28/2025",
+      "buy": 0,
+      "sell": 2,
+      "price": 6427.25,
+      "currency": "USD",
+      "exchangeFees": 0.70,
+      "nfaFees": 0.04,
+      "commission": 1.00,
+      "conversionRate": 1.0
+    },
+    {
+      "date": "07/29/2025",
+      "buy": 2,
+      "sell": 0,
+      "price": 6433.00,
+      "currency": "USD",
+      "exchangeFees": 0.70,
+      "nfaFees": 0.04,
+      "commission": 1.00,
+      "conversionRate": 1.0
+    },
+    {
+      "date": "07/29/2025",
+      "buy": 0,
+      "sell": 2,
+      "price": 6431.25,
+      "currency": "USD",
+      "exchangeFees": 0.70,
+      "nfaFees": 0.04,
+      "commission": 1.00,
+      "conversionRate": 1.0
+    }
+  ]
+}

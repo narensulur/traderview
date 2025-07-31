@@ -1,0 +1,284 @@
+{
+  "demo_scenarios": [
+    {
+      "name": "Interactive Brokers Integration Test",
+      "broker": "interactive_brokers",
+      "test_connection": {
+        "endpoint": "POST /api/broker-integration/test-connection",
+        "payload": {
+          "brokerName": "interactive_brokers",
+          "credentials": {
+            "apiKey": "demo-ib-key",
+            "apiSecret": "demo-ib-secret",
+            "sandbox": true
+          }
+        },
+        "expected_response": {
+          "success": true,
+          "message": "Successfully connected to Interactive Brokers",
+          "accountsFound": ["DU123456", "DU789012"]
+        }
+      },
+      "sync_orders": {
+        "endpoint": "POST /api/broker-integration/sync-orders",
+        "payload": {
+          "brokerName": "interactive_brokers",
+          "credentials": {
+            "apiKey": "demo-ib-key",
+            "apiSecret": "demo-ib-secret",
+            "sandbox": true
+          },
+          "tradingAccountId": 1,
+          "startDate": "2024-01-01T00:00:00",
+          "endDate": "2024-12-31T23:59:59"
+        },
+        "expected_response": {
+          "success": true,
+          "message": "Successfully synced orders from interactive_brokers",
+          "importedOrders": 25,
+          "skippedOrders": 3,
+          "totalFetched": 28
+        }
+      }
+    },
+    {
+      "name": "TD Ameritrade Integration Test",
+      "broker": "td_ameritrade",
+      "test_connection": {
+        "endpoint": "POST /api/broker-integration/test-connection",
+        "payload": {
+          "brokerName": "td_ameritrade",
+          "credentials": {
+            "accessToken": "demo-td-access-token",
+            "clientId": "demo-client-id",
+            "sandbox": true
+          }
+        },
+        "expected_response": {
+          "success": true,
+          "message": "Successfully connected to TD Ameritrade",
+          "accountsFound": ["123456789"]
+        }
+      },
+      "account_info": {
+        "endpoint": "POST /api/broker-integration/account-info",
+        "payload": {
+          "brokerName": "td_ameritrade",
+          "credentials": {
+            "accessToken": "demo-td-access-token",
+            "clientId": "demo-client-id",
+            "sandbox": true
+          },
+          "accountId": "123456789"
+        },
+        "expected_response": {
+          "success": true,
+          "accountInfo": {
+            "accountNumber": "123456789",
+            "accountName": "TD Ameritrade Account",
+            "accountType": "MARGIN",
+            "balance": 75000.00,
+            "availableBalance": 25000.00,
+            "currency": "USD",
+            "isActive": true
+          }
+        }
+      }
+    },
+    {
+      "name": "Webull Integration Test",
+      "broker": "webull",
+      "test_connection": {
+        "endpoint": "POST /api/broker-integration/test-connection",
+        "payload": {
+          "brokerName": "webull",
+          "credentials": {
+            "accessToken": "demo-webull-token",
+            "sandbox": true
+          }
+        },
+        "expected_response": {
+          "success": true,
+          "message": "Successfully connected to Webull",
+          "accountsFound": ["12345"]
+        }
+      },
+      "sync_orders": {
+        "endpoint": "POST /api/broker-integration/sync-orders",
+        "payload": {
+          "brokerName": "webull",
+          "credentials": {
+            "accessToken": "demo-webull-token",
+            "sandbox": true
+          },
+          "tradingAccountId": 2,
+          "startDate": "2024-06-01T00:00:00",
+          "endDate": "2024-06-30T23:59:59"
+        },
+        "expected_response": {
+          "success": true,
+          "message": "Successfully synced orders from webull",
+          "importedOrders": 15,
+          "skippedOrders": 0,
+          "totalFetched": 15
+        }
+      }
+    },
+    {
+      "name": "Robinhood Integration Test",
+      "broker": "robinhood",
+      "test_connection": {
+        "endpoint": "POST /api/broker-integration/test-connection",
+        "payload": {
+          "brokerName": "robinhood",
+          "credentials": {
+            "accessToken": "demo-rh-token",
+            "sandbox": true
+          }
+        },
+        "expected_response": {
+          "success": true,
+          "message": "Successfully connected to Robinhood",
+          "accountsFound": ["RH123456"]
+        }
+      },
+      "account_info": {
+        "endpoint": "POST /api/broker-integration/account-info",
+        "payload": {
+          "brokerName": "robinhood",
+          "credentials": {
+            "accessToken": "demo-rh-token",
+            "sandbox": true
+          },
+          "accountId": "RH123456"
+        },
+        "expected_response": {
+          "success": true,
+          "accountInfo": {
+            "accountNumber": "RH123456",
+            "accountName": "Robinhood Account",
+            "accountType": "INDIVIDUAL",
+            "balance": 25000.75,
+            "availableBalance": 5000.25,
+            "currency": "USD",
+            "isActive": true
+          }
+        }
+      }
+    }
+  ],
+  "sample_orders_by_broker": {
+    "interactive_brokers": [
+      {
+        "brokerOrderId": "IB001",
+        "symbol": "AAPL",
+        "side": "BUY",
+        "orderType": "MARKET",
+        "status": "FILLED",
+        "quantity": 100,
+        "filledQuantity": 100,
+        "avgFillPrice": 175.25,
+        "commission": 1.00,
+        "fees": 0.00,
+        "placedAt": "2024-06-15T09:30:00",
+        "filledAt": "2024-06-15T09:30:15",
+        "assetType": "STOCK",
+        "exchange": "NASDAQ"
+      },
+      {
+        "brokerOrderId": "IB002",
+        "symbol": "TSLA",
+        "side": "SELL",
+        "orderType": "LIMIT",
+        "status": "FILLED",
+        "quantity": 50,
+        "filledQuantity": 50,
+        "price": 250.00,
+        "avgFillPrice": 249.95,
+        "commission": 1.00,
+        "fees": 0.00,
+        "placedAt": "2024-06-15T14:20:00",
+        "filledAt": "2024-06-15T14:22:30",
+        "assetType": "STOCK",
+        "exchange": "NASDAQ"
+      }
+    ],
+    "td_ameritrade": [
+      {
+        "brokerOrderId": "TD001",
+        "symbol": "SPY",
+        "side": "BUY",
+        "orderType": "MARKET",
+        "status": "FILLED",
+        "quantity": 200,
+        "filledQuantity": 200,
+        "avgFillPrice": 420.50,
+        "commission": 0.00,
+        "fees": 0.00,
+        "placedAt": "2024-06-16T10:15:00",
+        "filledAt": "2024-06-16T10:15:05",
+        "assetType": "EQUITY",
+        "exchange": "NYSE"
+      }
+    ],
+    "webull": [
+      {
+        "brokerOrderId": "WB001",
+        "symbol": "NVDA",
+        "side": "BUY",
+        "orderType": "LIMIT",
+        "status": "FILLED",
+        "quantity": 25,
+        "filledQuantity": 25,
+        "price": 450.00,
+        "avgFillPrice": 449.75,
+        "commission": 0.00,
+        "fees": 0.00,
+        "placedAt": "2024-06-17T11:30:00",
+        "filledAt": "2024-06-17T11:35:20",
+        "assetType": "STOCK",
+        "exchange": "NASDAQ"
+      }
+    ],
+    "robinhood": [
+      {
+        "brokerOrderId": "RH001",
+        "symbol": "AMD",
+        "side": "BUY",
+        "orderType": "MARKET",
+        "status": "FILLED",
+        "quantity": 75,
+        "filledQuantity": 75,
+        "avgFillPrice": 125.30,
+        "commission": 0.00,
+        "fees": 0.00,
+        "placedAt": "2024-06-18T13:45:00",
+        "filledAt": "2024-06-18T13:45:10",
+        "assetType": "STOCK",
+        "exchange": "NASDAQ"
+      }
+    ]
+  },
+  "test_commands": [
+    {
+      "description": "Get available broker integrations",
+      "command": "curl -s http://localhost:8080/api/broker-integration/available | jq ."
+    },
+    {
+      "description": "Test Interactive Brokers connection",
+      "command": "curl -s -X POST http://localhost:8080/api/broker-integration/test-connection -H 'Content-Type: application/json' -d '{\"brokerName\":\"interactive_brokers\",\"credentials\":{\"apiKey\":\"demo-key\",\"sandbox\":true}}' | jq ."
+    },
+    {
+      "description": "Test TD Ameritrade connection",
+      "command": "curl -s -X POST http://localhost:8080/api/broker-integration/test-connection -H 'Content-Type: application/json' -d '{\"brokerName\":\"td_ameritrade\",\"credentials\":{\"accessToken\":\"demo-token\",\"sandbox\":true}}' | jq ."
+    },
+    {
+      "description": "Test Webull connection",
+      "command": "curl -s -X POST http://localhost:8080/api/broker-integration/test-connection -H 'Content-Type: application/json' -d '{\"brokerName\":\"webull\",\"credentials\":{\"accessToken\":\"demo-token\",\"sandbox\":true}}' | jq ."
+    },
+    {
+      "description": "Test Robinhood connection",
+      "command": "curl -s -X POST http://localhost:8080/api/broker-integration/test-connection -H 'Content-Type: application/json' -d '{\"brokerName\":\"robinhood\",\"credentials\":{\"accessToken\":\"demo-token\",\"sandbox\":true}}' | jq ."
+    }
+  ]
+}

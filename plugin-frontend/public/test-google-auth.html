@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Auth Test</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+    <h1>Google Authentication Test</h1>
+    <div id="g_id_onload"
+         data-client_id="893822634946-iqnq8b93tsbd7733f7rnuc7l13mhlqkb.apps.googleusercontent.com"
+         data-callback="handleCredentialResponse">
+    </div>
+    <div class="g_id_signin" data-type="standard"></div>
+    
+    <div id="result"></div>
+    
+    <script>
+        function handleCredentialResponse(response) {
+            console.log("Encoded JWT ID token: " + response.credential);
+            document.getElementById('result').innerHTML = 
+                '<h2>Success!</h2><p>Google authentication is working. JWT token received.</p>';
+        }
+        
+        window.onload = function () {
+            google.accounts.id.initialize({
+                client_id: "893822634946-iqnq8b93tsbd7733f7rnuc7l13mhlqkb.apps.googleusercontent.com",
+                callback: handleCredentialResponse
+            });
+            google.accounts.id.renderButton(
+                document.querySelector('.g_id_signin'),
+                { theme: "outline", size: "large" }
+            );
+        }
+    </script>
+</body>
+</html>
