@@ -1,0 +1,32 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - echo "=== Pre-build Phase ==="
+        - echo "Root directory contents:" && ls -la
+        - echo "Navigating to plugin-frontend directory..."
+        - cd plugin-frontend
+        - echo "Plugin-frontend directory contents:" && ls -la
+        - echo "Node version:" && node --version
+        - echo "NPM version:" && npm --version
+        - echo "Installing dependencies..."
+        - npm ci
+        - echo "Dependencies installed successfully"
+    build:
+      commands:
+        - echo "=== Build Phase ==="
+        - echo "Navigating to plugin-frontend directory..."
+        - cd plugin-frontend
+        - echo "Current directory:" && pwd
+        - echo "Starting React build..."
+        - CI=false npm run build
+        - echo "Build completed successfully"
+        - echo "Build directory contents:" && ls -la build/
+  artifacts:
+    baseDirectory: plugin-frontend/build
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - plugin-frontend/node_modules/**/*

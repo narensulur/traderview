@@ -1,0 +1,29 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - echo "=== Pre-build Phase ==="
+        - echo "Current directory:" && pwd
+        - echo "Directory contents:" && ls -la
+        - echo "Node version:" && node --version
+        - echo "NPM version:" && npm --version
+        - echo "Installing dependencies..."
+        - npm ci
+        - echo "Dependencies installed successfully"
+        - echo "Package.json contents:" && cat package.json
+    build:
+      commands:
+        - echo "=== Build Phase ==="
+        - echo "Current directory:" && pwd
+        - echo "Starting React build..."
+        - CI=false npm run build
+        - echo "Build completed successfully"
+        - echo "Build directory contents:" && ls -la build/
+  artifacts:
+    baseDirectory: build
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
